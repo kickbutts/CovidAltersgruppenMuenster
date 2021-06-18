@@ -31,11 +31,7 @@ jobs:
           sudo python -m pip install --upgrade pip
           sudo pip install -r requirements.txt
 
-      - name: execute py script # run sj-gobierno.py to get the latest data
-        env:
-          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+      - name: execute py script # run collectData.py to get the latest data
         run: sudo python collectData.py
 
       - name: commit files
