@@ -36,7 +36,7 @@ import numpy as np
 import altair as alt
 import pandas as  pd
 import requests
-import seaborn as sns
+#import seaborn as sns
 #alt.data_transformers.disable_max_rows()
 #alt.renderers.enable('notebook')
 
