@@ -2,7 +2,7 @@ name: get Data
 
 on:
   schedule:
-    - cron: '0 6 * * *' # runs at 12:00 UTC everyday
+    - cron: '20 14 * * *' # runs at 12:00 UTC everyday
 
 jobs:
   build:
