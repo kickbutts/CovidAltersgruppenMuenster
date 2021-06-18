@@ -52,8 +52,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-        source_file: 'website/Inzidenzen_Altergruppen.html'
-        destination_repo: ' kickbutts/kickbutts.github.io '
-        user_email: 'kickbutts@gmx.de'
-        user_name: 'kickbutts'
-        commit_message: 'newly generated website'
+          source_file: 'website/Inzidenzen_Altergruppen.html'
+          destination_repo: ' kickbutts/kickbutts.github.io '
+          user_email: 'kickbutts@gmx.de'
+          user_name: 'kickbutts'
+          commit_message: 'newly generated website'
