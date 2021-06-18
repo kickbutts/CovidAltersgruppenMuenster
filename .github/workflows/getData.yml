@@ -26,10 +26,10 @@ jobs:
         with:
           python-version: '3.x' # install the python version needed
 
-      - name: install python3 packages
+      - name: install python packages
         run: |
-          python3 -m pip3 install --upgrade pip
-          pip3 install -r requirements.txt
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: execute py script # run sj-gobierno.py to get the latest data
         env:
