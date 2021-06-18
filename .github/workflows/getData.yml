@@ -2,7 +2,7 @@ name: get Data
 
 on:
   schedule:
-    - cron: '00 06 * * *' # runs at 12:00 UTC everyday
+    - cron: '00 6 * * *' # runs at 12:00 UTC everyday
 
   workflow_dispatch:
     inputs:
