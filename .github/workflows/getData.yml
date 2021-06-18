@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: '23 14 * * *' # runs at 12:00 UTC everyday
 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+
 jobs:
   build:
     runs-on: ubuntu-latest
