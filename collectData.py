@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 #Collect Data
 import datetime
-import wget
+#import wget
 from datetime import timedelta
 
 now = datetime.datetime.now()
