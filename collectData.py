@@ -9,8 +9,8 @@ yesterday = datetime.datetime.now()-timedelta(days=1)
 print('Beginning file download. Date is:'+now.strftime('%d.%m.%Y'))
 
 
-url = 'https://raw.githubusercontent.com/semohr/risikogebiete_deutschland/master/assets/data/data_latest.csv'
-wget.download(url, '/data/inzidenz'+now.strftime('%d.%m.%Y')+'.csv')
+#url = 'https://raw.githubusercontent.com/semohr/risikogebiete_deutschland/master/assets/data/data_latest.csv'
+#wget.download(url, '/data/inzidenz'+now.strftime('%d.%m.%Y')+'.csv')
 
 #from pandas import DataFrame, DatetimeIndex, read_csv, to_datetime, to_csv
 #from datetime import timedelta
@@ -21,6 +21,7 @@ import requests
 datum = yesterday.strftime('%d.%m.%Y')
 
 df_inzidenzen_Landkreise=pd.read_csv("https://raw.githubusercontent.com/semohr/risikogebiete_deutschland/master/assets/data/data_latest.csv")
+df_inzidenzen_Landkreise.to_csv('/data/inzidenz'+now.strftime('%d.%m.%Y')+'.csv', encoding='utf-8', index=False, header = True)
 df_inzidenzen_Landkreise['date']= datum
 #print(df_inzidenzen_Landkreise)
 
