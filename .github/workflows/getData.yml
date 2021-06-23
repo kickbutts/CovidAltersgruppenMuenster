@@ -21,11 +21,6 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
-      - name: print folders bevor
-        run: |
-          ls -la
-          ls data/
-
       - name: setup python
         uses: actions/setup-python@v2
         with:
@@ -38,11 +33,6 @@ jobs:
 
       - name: execute py script # run collectData.py to get the latest data
         run: sudo python collectData.py
-
-      - name: print folders after
-        run: |
-          ls -la
-          ls data/
 
       - name: commit files
         run: |
