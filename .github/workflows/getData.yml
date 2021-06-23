@@ -21,6 +21,11 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
+      - name: print folders
+        uses: |
+          ls -la
+          ls /data
+
       - name: setup python
         uses: actions/setup-python@v2
         with:
@@ -38,7 +43,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
+          git add -A
           git commit -m "update data" -a
 
       - name: push changes
