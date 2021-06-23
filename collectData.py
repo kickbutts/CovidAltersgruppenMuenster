@@ -3,6 +3,7 @@
 import datetime
 #import wget
 from datetime import timedelta
+import os
 
 now = datetime.datetime.now()
 yesterday = datetime.datetime.now()-timedelta(days=1)
@@ -29,6 +30,12 @@ df_Inzidenzen_Muenster=df_inzidenzen_Landkreise.loc[df_inzidenzen_Landkreise["La
 print(df_Inzidenzen_Muenster)
 
 df_Inzidenzen_Muenster.to_csv('/data/inzidenzenMuenster.csv', encoding='utf-8', index=False, mode='a', header = False)
+path = '/data'
+
+files = os.listdir(path)
+
+for f in files:
+	print(f)
 
 #build website
 from pandas import DataFrame, DatetimeIndex, read_csv, to_datetime

@@ -8,3 +8,4 @@ numpy>= 1
 altair>= 1
 requests>= 1
 wget>= 1
+os>= 1
