@@ -69,7 +69,7 @@ plot=alt.Chart(df_long).mark_rect().encode(
     color='Wert:Q',
     tooltip=['Datum:T','Altersgruppe:O','Wert:Q',]
 ).properties(
-    title='Inzidenzen in Münster aufgeschlüsselt nach Altergruppen'
+    title='Inzidenzen in Münster aufgeschlüsselt nach Altersgruppen'
 )
 
 text = plot.mark_text().encode(
