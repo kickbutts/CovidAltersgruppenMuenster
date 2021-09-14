@@ -71,6 +71,7 @@ plot=alt.Chart(df_long).mark_rect().encode(
 ).properties(
     title='Inzidenzen in Münster aufgeschlüsselt nach Altersgruppen'
 )
+
 df_week=df.groupby(['Datum', df['Datum'].dt.strftime('%W')]).sum()
 df_week.reset_index(level=1, inplace=True)
 df_week.reset_index(drop=True, inplace=True)
