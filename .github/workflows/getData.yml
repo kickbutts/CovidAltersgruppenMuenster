@@ -43,15 +43,15 @@ jobs:
           git commit -m "update data" -a
 
       - name: push changes
-        #uses: ad-m/github-push-action@v0.6.0
-        #with:
-          #github_token: ${{ secrets.GITHUB_TOKEN }}
-          #branch: main
-          #force: true
-        uses: actions-x/commit@v2
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          github: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+          force: true
+        #uses: actions-x/commit@v2
+        #with:
+          #github: ${{ secrets.GITHUB_TOKEN }}
+          #branch: main
           #force: true
 
       - name: Pushes website to gitpages repo
