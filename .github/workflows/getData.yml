@@ -47,10 +47,11 @@ jobs:
           #github_token: ${{ secrets.GITHUB_TOKEN }}
           #branch: main
           #force: true
-        uses: actions-go/push@master
+        uses: actions-x/commit@v2
         with:
-          commit-message: '[Auto] update pre-puilt dist packages'
-          remote: origin
+          github: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          #force: true
 
       - name: Pushes website to gitpages repo
         uses: dmnemec/copy_file_to_another_repo_action@main
