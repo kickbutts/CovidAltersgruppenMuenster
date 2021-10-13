@@ -42,11 +42,15 @@ jobs:
           git commit -m "update data" -a
 
       - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
+        #uses: ad-m/github-push-action@v0.6.0
+        #with:
+          #github_token: ${{ secrets.GITHUB_TOKEN }}
+          #branch: main
+          #force: true
+        uses: actions-go/push@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: true
+          commit-message: '[Auto] update pre-puilt dist packages'
+          remote: origin
 
       - name: Pushes website to gitpages repo
         uses: dmnemec/copy_file_to_another_repo_action@main
