@@ -55,7 +55,7 @@ jobs:
           #force: true
 
       - name: Pushes website to gitpages repo
-        uses: kickbutts/copy_file_to_another_repo_action@main
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
