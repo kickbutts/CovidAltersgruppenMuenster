@@ -72,24 +72,27 @@ plot=alt.Chart(df_long).mark_rect().encode(
     title='Inzidenzen in Münster aufgeschlüsselt nach Altersgruppen'
 )
 
-df_week=df.groupby(['Datum', df['Datum'].dt.strftime('%W')]).sum()
+df_week=df
+df_week['Jahr'] = df['Datum'].dt.year
+df_week=df_week.groupby(['Datum', df['Datum'].dt.strftime('%W')]).sum()
 df_week.reset_index(level=1, inplace=True)
 df_week.reset_index(drop=True, inplace=True)
-df_week=df_week.groupby('Datum').mean()
+df_week=df_week.groupby(['Jahr','Datum']).mean()
 #df_week
 df_week=df_week.reset_index()
+df_week['Woche']=df_week['Jahr'].astype(str)+"/"+df_week['Datum'].astype(str)
 df_week.rename(columns = {'Datum':'Kalenderwoche'}, inplace = True)
 df_week=df_week.round(decimals=2)
-df_long_week=df_week.drop(['Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
+df_long_week=df_week.drop(['Kalenderwoche','index','Jahr','Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
 
-df_long_week=pd.melt(frame=df_long_week, id_vars="Kalenderwoche", var_name='Altersgruppe', value_name='Wert')
+df_long_week=pd.melt(frame=df_long_week, id_vars="Woche", var_name='Altersgruppe', value_name='Wert')
 df_long_week=df_long_week.sort_values('Kalenderwoche', ascending=[True])
 plot_week=alt.Chart(df_long_week).mark_rect().encode(
     #x='monthdate(Datum):O',
-    alt.X('Kalenderwoche', title='Kalenderwoche'),
+    alt.X('Woche', title='Kalenderwoche'),
     y='Altersgruppe:O',
     color='Wert:Q',
-    tooltip=['Kalenderwoche','Altersgruppe:O','Wert:Q',]
+    tooltip=['Woche','Altersgruppe:O','Wert:Q',]
 ).properties(
     title='Durchschnittliche wöchentliche Inzidenz in Münster aufgeschlüsselt nach Altersgruppen'
 )
