@@ -64,7 +64,7 @@ df_long=df_long.sort_values('Datum', ascending=[True])
 
 plot=alt.Chart(df_long).mark_rect().encode(
     #x='monthdate(Datum):O',
-    alt.X('monthdate(Datum):O', title='Datum'),
+    alt.X('yearmonthdate(Datum):O', title='Datum'),
     y='Altersgruppe:O',
     color='Wert:Q',
     tooltip=['Datum:T','Altersgruppe:O','Wert:Q',]
