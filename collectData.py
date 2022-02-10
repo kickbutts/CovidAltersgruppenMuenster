@@ -57,7 +57,7 @@ df.rename(columns = {'inzidenz':'Gesamtbevölkerung',
                     }, inplace = True)
 df=df.round(decimals=2)
 
-df_long=df.drop(['index','Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
+df_long=df.drop(['Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
 
 df_long=pd.melt(frame=df_long, id_vars="Datum", var_name='Altersgruppe', value_name='Wert')
 df_long=df_long.sort_values('Datum', ascending=[True])
