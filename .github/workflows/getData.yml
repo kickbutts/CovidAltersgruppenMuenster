@@ -34,6 +34,9 @@ jobs:
       - name: execute py script # run collectData.py to get the latest data
         run: sudo python collectData.py
 
+      - name: execute py script # run collectData.py to get the latest data
+        run: sudo python processData.py
+
       - name: commit files
         run: |
           git config --local user.email "action@github.com"

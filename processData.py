@@ -1,22 +1,4 @@
-# -*- coding: utf8 -*-
-#Collect Data
-import datetime
-#import wget
-from datetime import timedelta
-import os
-
-now = datetime.datetime.now()
-yesterday = datetime.datetime.now()-timedelta(days=1)
-print('Beginning file download. Date is:'+now.strftime('%d.%m.%Y'))
-
-
-#url = 'https://raw.githubusercontent.com/semohr/risikogebiete_deutschland/master/assets/data/data_latest.csv'
-#wget.download(url, '/data/inzidenz'+now.strftime('%d.%m.%Y')+'.csv')
-
-#from pandas import DataFrame, DatetimeIndex, read_csv, to_datetime, to_csv
-#from datetime import timedelta
-#import numpy as np
-'''import pandas as  pd
+import pandas as  pd
 import requests
 
 datum = yesterday.strftime('%d.%m.%Y')
@@ -101,4 +83,3 @@ plot_week=alt.Chart(df_long_week).mark_rect().encode(
 
 final=alt.vconcat(plot, plot_week)
 final.save('website/Inzidenzen_Altergruppen.html')
-'''
