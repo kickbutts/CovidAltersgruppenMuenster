@@ -16,7 +16,7 @@ print('Beginning file download. Date is:'+now.strftime('%d.%m.%Y'))
 #from pandas import DataFrame, DatetimeIndex, read_csv, to_datetime, to_csv
 #from datetime import timedelta
 #import numpy as np
-'''import pandas as  pd
+import pandas as  pd
 import requests
 
 datum = yesterday.strftime('%d.%m.%Y')
@@ -101,4 +101,3 @@ plot_week=alt.Chart(df_long_week).mark_rect().encode(
 
 final=alt.vconcat(plot, plot_week)
 final.save('website/Inzidenzen_Altergruppen.html')
-'''
