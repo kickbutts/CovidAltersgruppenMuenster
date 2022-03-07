@@ -56,6 +56,7 @@ df.rename(columns = {'inzidenz':'Gesamtbevölkerung',
                      'date':'Datum'
                     }, inplace = True)
 df=df.round(decimals=2)
+df.set_index('Datum')
 
 df_long=df.drop(['Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
 
@@ -78,10 +79,10 @@ df_week=df_week.groupby(['Datum', df['Datum'].dt.strftime('%W')]).sum()
 df_week.reset_index(level=1, inplace=True)
 df_week.reset_index(drop=True, inplace=True)
 df_week=df_week.groupby(['Jahr','Datum']).mean()
-#df_week
+df_week
 df_week=df_week.reset_index()
 df_week['Woche']=df_week['Jahr'].astype(str)+"/"+df_week['Datum'].astype(str)
-#df_week=df_week.reset_index()
+df_week=df_week.reset_index()
 df_week.rename(columns = {'Datum':'Kalenderwoche'}, inplace = True)
 df_week=df_week.round(decimals=2)
 df_week
