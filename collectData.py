@@ -81,11 +81,11 @@ df_week=df_week.groupby(['Jahr','Datum']).mean()
 #df_week
 df_week=df_week.reset_index()
 df_week['Woche']=df_week['Jahr'].astype(str)+"/"+df_week['Datum'].astype(str)
-df_week=df_week.reset_index()
+#df_week=df_week.reset_index()
 df_week.rename(columns = {'Datum':'Kalenderwoche'}, inplace = True)
 df_week=df_week.round(decimals=2)
 df_week
-df_long_week=df_week.drop(['index','Kalenderwoche','Jahr','Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
+df_long_week=df_week.drop(['Kalenderwoche','index','Jahr','Landreis ID','weekly_cases','weekly_cases_A00-A04','weekly_cases_A05-A14','weekly_cases_A15-A34','weekly_cases_A35-A59','weekly_cases_A60-A79','weekly_cases_A80+','weekly_cases_unbekannt','inzidenz_unbekannt'], axis=1)
 
 df_long_week=pd.melt(frame=df_long_week, id_vars=["Woche"], var_name='Altersgruppe', value_name='Wert')
 df_long_week=df_long_week.sort_values('Woche', ascending=[True])
