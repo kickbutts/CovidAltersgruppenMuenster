@@ -103,8 +103,9 @@ plot_week=alt.Chart(df_long_week).mark_rect().encode(
 
 final=alt.vconcat(plot, plot_week)
 #final.save('website/Inzidenzen_Altergruppen.html')
-try:
-    altair_saver.save(final, 'website/Inzidenzen_Altergruppen.html', inline=True)
-    print("Website erfolgreich gespeichert")
-except Exception as e:
-    print("The error is: ",e)
+altair_saver.save(final,'website/Inzidenzen_Altergruppen.html', inline=True)
+#try:
+#    altair_saver.save(final,'website/Inzidenzen_Altergruppen.html', inline=True)
+#    print("Website erfolgreich gespeichert")
+#except Exception as e:
+#    print("The error is: ",e)
