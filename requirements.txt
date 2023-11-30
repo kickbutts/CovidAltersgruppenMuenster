@@ -1,8 +1,8 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # platform: linux-64
-pandas>= 1
-altair_saver>=1
+pandas
+altair_saver
 requests>= 1
 datetime>= 1
 numpy>= 1
