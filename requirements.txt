@@ -3,6 +3,7 @@
 # platform: linux-64
 pandas
 altair_saver
+altair_viewer
 requests>= 1
 datetime>= 1
 numpy>= 1
