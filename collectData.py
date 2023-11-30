@@ -5,6 +5,7 @@ import datetime
 from datetime import timedelta
 import os
 import altair_saver
+alt.data_transformers.disable_max_rows()
 
 now = datetime.datetime.now()
 yesterday = datetime.datetime.now()-timedelta(days=1)
