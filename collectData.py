@@ -4,6 +4,7 @@ import datetime
 #import wget
 from datetime import timedelta
 import os
+import altair as alt
 import altair_saver
 alt.data_transformers.disable_max_rows()
 
